@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to right, #000000, #2c2c2c); /* Black gradient */
+    color: #ffffff; /* White text for better readability */
+}
+
+nav {
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+    background-color: #000000;
+}
+
+.nav-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    color: #B22222; /* Medium red color for logo */
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.logo span {
+    color: #ffffff; /* White highlight in logo */
+    text-shadow: 0 0 10px #B22222; /* Medium red glow effect */
+}
+
+.hamburg, .cancel {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: #ffffff;
+    font-size: 2rem;
+    display: none;
+}
+
+.nav-container .links {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.nav-container .links a {
+    position: relative;
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-container .links a::before {
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #B22222; /* Medium red underline on hover */
+    transition: 0.3s ease;
+}
+
+.nav-container .links a:hover::before {
+    width: 100%;
+}
+
+.nav-container .contact-btn {
+    background-color: #000000;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid #B22222; /* Medium red border */
+    transition: 0.3s ease;
+}
+
+.nav-container .contact-btn a {
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+.nav-container .contact-btn:hover, .nav-container .contact-btn:hover a {
+    background-color: #B22222; /* Medium red background on hover */
+    color: #000000; /* Black text on hover */
+}
+
+.nav-container .links a:hover {
+    color: #ffffff; /* Medium red text on hover */
+}
+
+.dropdown {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: brightness(40%) blur(3px);
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 20px black;
+    transition: 0.3s ease;
+}
+
+.dropdown .links a {
+    color: #ffffff;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+.dropdown .links a:hover {
+    background-color: #B22222;
+}
+
+section {
+    width: 100%;
+    height: 90vh;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main-container .image {
+    z-index: -1;
+    width: 50%;
+}
+
+.main-container .image img {
+    width: 100%;
+}
+
+.main-container .content {
+    color: #ffffff;
+    width: 40%;
+    min-height: 100px;
+}
+
+.content h1 {
+    font-size: clamp(1rem, 2rem + 5vw, 3rem);
+}
+
+.content h1 span {
+    color: #B22222; /* Medium red highlight */
+    text-shadow: 0 0 5px #000000;
+}
+
+.content .typewriter {
+    font-weight: 600;
+    font-size: clamp(1rem, 1rem + 5vw, 2rem);
+}
+
+.content .typewriter span {
+    color: #B22222; /* Medium red text */
+    font-size: 2.5rem;
+    text-shadow: 0 0 2.5px #000000;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.typewriter span::before {
+    content: "Developer";
+    animation: words 15s infinite;
+}
+
+.typewriter span::after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid #B22222; /* Medium red cursor */
+    animation: cursor 0.6s linear infinite;
+}
+
+@keyframes cursor {
+    to {
+        border-left: 3px solid #ffffff;
+    }
+}
+
+@keyframes words {
+    0%, 33% {
+        content: "Developer";
+    }
+    34%, 66% {
+        content: "Designer";
+    }
+    67%, 100% {
+        content: "Programmer";
+    }
+}
+
+.content p {
+    font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
+    margin: 10px 0;
+}
+
+.social-links i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: 0.2rem solid #B22222; /* Medium red border */
+    border-radius: 50%;
+    color: #ffffff;
+    margin: 5px 10px;
+    font-size: 1.5rem;
+    transition: 0.3s ease;
+}
+
+.social-links i:hover {
+    scale: 1.3;
+    color: #000000; /* Black icon on hover */
+    background-color: #B22222; /* Medium red background */
+    filter: drop-shadow(0 0 10px #000000);
+}
+
+.content button {
+    width: 40%;
+    height: 6vh;
+    margin: 30px;
+    background-color: #B22222; /* Medium red button */
+    color: #000000;
+    border: none;
+    outline: none;
+    font-size: 100%;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.content button:hover {
+    scale: 1.1;
+    color: #ffffff; /* White text on hover */
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    font-weight: 700;
+    box-shadow: 0 0 40px #B22222; /* Medium red glow on hover */
+}
+
+@media (max-width: 884px) {
+    body {
+        overflow-y: visible;
+    }
+    nav .logo {
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 1.5rem;
+    }
+    .main-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-container .links {
+        display: none;
+    }
+    .hamburg, .cancel {
+        display: block;
+    }
+    .main-container .content {
+        width: 80%;
+    }
+    .social-links i {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.5rem;
+    }
+    .cancel {
+        color: white;
+    }
+    .main-container .image {
+        width: 80%;
+        margin-bottom: 0px;
+    }
+}
