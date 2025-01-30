@@ -174,7 +174,7 @@ span{
     position: relative;
 }
 .typing-text span::before{
-    content: "software Developer";
+    content: "Web Developer";
     color: #b74b4b;
     animation: words 20s infinite;
 }
@@ -194,9 +194,7 @@ span{
     }
 }
 @keyframes words{
-    0%, 20%{
-        content: "Web Developer";
-    }
+   
     
     41%, 60%{
         content: "Web Designer";
